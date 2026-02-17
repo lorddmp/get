@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 
-
 class PWM_DAC:
     def __init__(self, gpio_pin, pwm_frequency, dynamic_range, verbose = False):
         self.gpio_pin = gpio_pin
@@ -25,7 +24,7 @@ class PWM_DAC:
                 return 0
         duty_cycle = (voltage/self.dynamic_range)*100
         self.pwm.start(duty_cycle)
-        print("коэффициент заполнения: " , duty_cycle)
+        print("коэффициент заполнения: ", duty_cycle)
 
 if __name__ == "__main__":
     try:
@@ -38,7 +37,7 @@ if __name__ == "__main__":
                 
 
             except ValueError:
-                print("вы ввели не число. попробуйте ещё раз\n")
+                print("Вы ввели не число. попробуйте ещё раз\n")
 
     finally:
         dac.deinit()
