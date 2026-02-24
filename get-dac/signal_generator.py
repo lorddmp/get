@@ -9,3 +9,10 @@ def get_sin_wave(freq, time):
 def wait_for_sampling_period(sampling_frequency):
     sampling_period = 1.0 / sampling_frequency
     time.sleep(sampling_period)
+
+def get_triang_wave(freq, time):
+    T = 1/freq
+    x = time % T
+    if x <= T/2:
+        return (2/T)*x
+    return 1-(2/T)*(x-T/2)
