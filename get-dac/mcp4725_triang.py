@@ -11,7 +11,7 @@ try:
 
     while True:
         try:
-            voltage = sg.get_sin_wave(signal_frequency, time.time())*amplitude
+            voltage = sg.get_triang_wave(signal_frequency, time.time())*amplitude
             mcp.set_voltage(voltage)
             sg.wait_for_sampling_period(sampling_frequency)
         
